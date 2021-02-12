@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>A-Frame - Image Textures</title>
+	<script src="js/aframe-master.1.0.4.min.js"></script>
+</head>
+
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+<script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+    
+<body>
+<a-scene antialias="true">
+	
+	<a-assets>
+		<img id="stone" src="images/stone.jpg" crossorigin="anonymous" />
+		<img id="ruin" src="images/ruin.jpg" crossorigin="anonymous" />
+		<img id="plain" src="images/plain.jpg" crossorigin="anonymous" />
+		<img id="tree" src="images/tree.jpg" crossorigin="anonymous" />
+        <img id="pano" src="images/pano.jpg" crossorigin="anonymous" />
+	</a-assets>
+		
+	<a-sky 
+		color = "#FFFFFF"
+		material = "src: #pano">
+	</a-sky>
+    
+    <a-box
+        position="-2 2 -2"
+        scale=".2 .2 .2"     
+        rotation="0 45 0"
+        event-set__enter="_event: mouseenter; _target: a-sky; material.src: #stone"      
+      ></a-box>  
+    
+    <a-box
+        position="2 2 2"
+        scale=".2 .2 .2"     
+        rotation="0 45 0"
+        event-set__enter="_event: mouseenter; _target: a-sky; material.src: #ruin"      
+      ></a-box>  
+    
+    <a-box
+        position="-2 2 2"
+        scale=".2 .2 .2"     
+        rotation="0 45 0"
+        event-set__enter="_event: mouseenter; _target: a-sky; material.src: #plain"      
+      ></a-box>  
+    
+    <a-box
+        position="2 2 -2"
+        scale=".2 .2 .2"     
+        rotation="0 45 0"
+        event-set__enter="_event: mouseenter; _target: a-sky; material.src: #tree"      
+      ></a-box>  
+
+        <a-camera>
+        <a-cursor></a-cursor>
+    </a-camera>
+	
+</a-scene>
+</body>
+</html>
